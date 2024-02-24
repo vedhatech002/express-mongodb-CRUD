@@ -37,3 +37,5 @@
 > step17: update product
 
 > step18 : delete product
+
+> step19 : config route and controller
