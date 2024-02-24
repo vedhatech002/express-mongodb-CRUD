@@ -31,3 +31,7 @@
 > step14: save the data using mongoDb model that we have created(create product in database)
 
 > step15: get all data from database
+
+> step16: get single product
+
+> step17: update product
