@@ -35,3 +35,5 @@
 > step16: get single product
 
 > step17: update product
+
+> step18 : delete product

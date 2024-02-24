@@ -46,7 +46,7 @@ app.post("/api/products", async (req, res) => {
   }
 });
 
-//update a product
+//update a product in Db
 app.put("/api/product/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -58,6 +58,23 @@ app.put("/api/product/:id", async (req, res) => {
     const updatedProduct = await Product.findById(id);
 
     res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+    console.log(error);
+  }
+});
+
+//Delete a product
+app.delete("/api/product/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const product = await Product.findByIdAndDelete(id);
+
+    if (!product) {
+      return res.status(404).json({ message: "product ot found" });
+    }
+    res.status(200).json({ message: "product deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
     console.log(error);
