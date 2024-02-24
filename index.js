@@ -10,6 +10,19 @@ app.get("/", (req, res) => {
   res.send("hello from node Api");
 });
 
+//Get All data from DB
+app.get("/api/products", async (req, res) => {
+  try {
+    const products = await Product.find({});
+    res.status(200).json(products);
+    console.log(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+    console.log(error);
+  }
+});
+
+//Post method to create product on DB
 app.post("/api/products", async (req, res) => {
   try {
     const product = await Product.create(req.body);
