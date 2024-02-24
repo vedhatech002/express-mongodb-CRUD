@@ -22,6 +22,19 @@ app.get("/api/products", async (req, res) => {
   }
 });
 
+//get single data from database
+app.get("/api/product/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    res.status(200).json(product);
+    console.log(product);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+    console.log(error);
+  }
+});
+
 //Post method to create product on DB
 app.post("/api/products", async (req, res) => {
   try {

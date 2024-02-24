@@ -28,4 +28,6 @@
 
 > step13: configure middleware **app.use(express.json())** aft that able to make post request
 
-> step14: save the data using mongoDb model that we have created
+> step14: save the data using mongoDb model that we have created(create product in database)
+
+> step15: get all data from database
