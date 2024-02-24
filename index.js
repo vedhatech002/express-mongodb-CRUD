@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 //middleware to recive json data
-app.use(express.json);
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("hello from node Api");

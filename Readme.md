@@ -26,4 +26,6 @@
 
 > step12: create api post method
 
-> step13: configure middleware
+> step13: configure middleware **app.use(express.json())** aft that able to make post request
+
+> step14: save the data using mongoDb model that we have created
